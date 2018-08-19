@@ -23,3 +23,24 @@ export const Tag =(props) => {
            return template 
     }
 }
+
+
+export const firebaseLoop = (response) => {
+    const data = []
+    response.forEach(element => {
+        data.push({
+            ...element.val(),
+            id: element.key 
+        })
+    })
+    return data
+}
+
+export const reverveArray = (actuallArray) => {
+    let reversedArray = []
+
+    for(let i = actuallArray.length-1; i >=0; i--){
+        reversedArray.push(actuallArray[i])
+    }
+    return reversedArray
+}
